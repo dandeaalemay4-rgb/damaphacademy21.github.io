@@ -22,83 +22,82 @@
     </header>
 
     <section class="hero">
-        <h1>Grade 9 Curriculum</h1>
-        <p>Comprehensive units and study resources for Grade 9 Mathematics and Physics.</p>
+        <h1>Grade 9 Curriculum & Quizzes</h1>
+        <p>Explore Units, Key Concepts, and Practice Interactive MCQs with Instant Feedback.</p>
     </section>
 
     <section class="main-content">
         
-        <h2>📐 Mathematics Units (9 Units)</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>Unit 1: Further on Sets</h3>
-                <p>Set structure, classification, operations, and real-life applications.</p>
+        <h2>📐 Unit 1: Further on Sets (Interactive Quizzes)</h2>
+        <br>
+
+        <!-- EASY QUESTION -->
+        <div class="quiz-card">
+            <h4>🟢 1. [EASY] If set A = {1, 2, 3, 4} and set B = {3, 4, 5, 6}, what is A ∩ B?</h4>
+            <div class="options-grid">
+                <button class="option-btn" onclick="checkAnswer(this, false, 'The union combine all elements: {1, 2, 3, 4, 5, 6}.')">{1, 2, 3, 4, 5, 6}</button>
+                <button class="option-btn" onclick="checkAnswer(this, true, 'Correct! Intersection (∩) includes only elements that belong to BOTH sets: {3, 4}.')">{3, 4}</button>
+                <button class="option-btn" onclick="checkAnswer(this, false, 'Difference A \\ B is {1, 2}.')">{1, 2}</button>
+                <button class="option-btn" onclick="checkAnswer(this, false, 'Difference B \\ A is {5, 6}.')">{5, 6}</button>
             </div>
-            <div class="card">
-                <h3>Unit 2: The Number System</h3>
-                <p>Rational, irrational, real numbers, integers, and fractions.</p>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- MEDIUM QUESTION -->
+        <div class="quiz-card">
+            <h4>🟡 2. [MEDIUM] Given set A with n(A) = 5 elements. How many proper subsets does set A have?</h4>
+            <div class="options-grid">
+                <button class="option-btn" onclick="checkAnswer(this, false, 'Total subsets formula is 2ⁿ = 32, but proper subsets exclude the set itself.')">32</button>
+                <button class="option-btn" onclick="checkAnswer(this, true, 'Awesome! Total subsets = 2⁵ = 32. Proper subsets = 2ⁿ - 1 = 32 - 1 = 31.')">31</button>
+                <button class="option-btn" onclick="checkAnswer(this, false, '25 is 5 squared, not 2⁵.')">25</button>
+                <button class="option-btn" onclick="checkAnswer(this, false, '10 is 2 × 5, not power of 2.')">10</button>
             </div>
-            <div class="card">
-                <h3>Unit 3: Solving Equations</h3>
-                <p>Linear and non-linear equations, algebraic rules.</p>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- HARD QUESTION -->
+        <div class="quiz-card">
+            <h4>🔴 3. [HARD] In a class of 40 students, 25 play Football, 20 play Basketball, and 5 play neither game. How many students play BOTH Football and Basketball?</h4>
+            <div class="options-grid">
+                <button class="option-btn" onclick="checkAnswer(this, false, 'Total students participating in sports is 40 - 5 = 35.')">5</button>
+                <button class="option-btn" onclick="checkAnswer(this, true, 'Spot on! n(F ∪ B) = 40 - 5 = 35. Using n(F ∪ B) = n(F) + n(B) - n(F ∩ B) ⇒ 35 = 25 + 20 - x ⇒ x = 10.')">10</button>
+                <button class="option-btn" onclick="checkAnswer(this, false, 'Check the formula: 25 + 20 - 15 = 30, which leaves 10 playing neither.')">15</button>
+                <button class="option-btn" onclick="checkAnswer(this, false, '20 is the total basketball players.')">20</button>
             </div>
-            <div class="card">
-                <h3>Unit 4: Solving Inequalities</h3>
-                <p>Linear, absolute value, quadratic inequalities, and graphing.</p>
+            <div class="feedback"></div>
+        </div>
+
+        <!-- HOT QUESTION -->
+        <div class="quiz-card">
+            <h4>🔥 4. [HOT - Higher Order Thinking] Let A and B be non-empty sets. If A ⊆ B, which of the following statements MUST be true?</h4>
+            <div class="options-grid">
+                <button class="option-btn" onclick="checkAnswer(this, false, 'A \\ B is actually empty (∅) because all elements of A are in B.')">A \ B = A</button>
+                <button class="option-btn" onclick="checkAnswer(this, false, 'A ∩ B is equal to A, not B.')">A ∩ B = B</button>
+                <button class="option-btn" onclick="checkAnswer(this, true, 'Brilliant analysis! Since A is completely inside B, combining A and B gives set B itself (A ∪ B = B).')">A ∪ B = B</button>
+                <button class="option-btn" onclick="checkAnswer(this, false, 'A′ ∩ B′ = (A ∪ B)′ = B′, not A′.')">A′ ∩ B′ = A′</button>
             </div>
-            <div class="card">
-                <h3>Unit 5: Introduction to Trigonometry</h3>
-                <p>Trigonometric ratios, right-angled triangles, geometry.</p>
-            </div>
-            <div class="card">
-                <h3>Unit 6: Regular Polygons</h3>
-                <p>Interior/exterior angles, properties, and patterns.</p>
-            </div>
-            <div class="card">
-                <h3>Unit 7: Congruency and Similarity</h3>
-                <p>Geometric theorems, ratios of sides and areas.</p>
-            </div>
-            <div class="card">
-                <h3>Unit 8: Vectors in Two Dimensions</h3>
-                <p>Vector vs scalar, operations, magnitude, and direction.</p>
-            </div>
-            <div class="card">
-                <h3>Unit 9: Statistics and Probability</h3>
-                <p>Data collection, interpretation, probability, and predictions.</p>
-            </div>
+            <div class="feedback"></div>
         </div>
 
         <br><br>
 
-        <h2>🔭 Physics Units (7 Units)</h2>
+        <h2>📚 Grade 9 Overview</h2>
         <div class="grid-container">
             <div class="card">
-                <h3>Unit 1: Physics and Human Society</h3>
-                <p>Branches of physics, relationship to other fields, prominent physicists.</p>
+                <h3>Unit 1: Further on Sets</h3>
+                <p>Set operations, Venn diagrams, subset calculations, and word problems.</p>
             </div>
             <div class="card">
-                <h3>Unit 2: Physical Quantities</h3>
-                <p>Scales, standards, units, measurement, and unit conversion.</p>
+                <h3>Unit 2: The Number System</h3>
+                <p>Rational and irrational numbers, real number properties, and operations.</p>
             </div>
             <div class="card">
-                <h3>Unit 3: Motion in a Straight Line</h3>
-                <p>Position, displacement, speed, velocity, acceleration, graphs.</p>
+                <h3>Unit 3: Linear Equations</h3>
+                <p>Solving linear equations, applications, and algebraic systems.</p>
             </div>
             <div class="card">
-                <h3>Unit 4: Force, Work, Energy, and Power</h3>
-                <p>Newton's laws, friction, kinetic/potential energy, power.</p>
-            </div>
-            <div class="card">
-                <h3>Unit 5: Simple Machines</h3>
-                <p>Mechanical advantage, velocity ratio, efficiency, types of machines.</p>
-            </div>
-            <div class="card">
-                <h3>Unit 6: Mechanical Oscillation & Waves</h3>
-                <p>Wave characteristics, sound waves, superposition, oscillations.</p>
-            </div>
-            <div class="card">
-                <h3>Unit 7: Temperature and Thermometry</h3>
-                <p>Temperature scales, thermometers, thermal expansion.</p>
+                <h3>Unit 4: Linear Inequalities</h3>
+                <p>Properties of inequalities, interval notation, and graphical solutions.</p>
             </div>
         </div>
 
@@ -109,5 +108,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="quiz-script.js"></script>
 </body>
 </html>
