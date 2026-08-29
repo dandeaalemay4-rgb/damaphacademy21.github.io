@@ -1,0 +1,38 @@
+const questionsG9M1 = [
+    {
+        q: "🟢 1. [EASY] If A = {a, b, c} and B = {b, c, d, e}, what is A ∩ B?",
+        options: ["{a, b, c, d, e}", "{b, c}", "{a}", "{d, e}"],
+        correctIndex: 1,
+        exp: "<b>Explanation:</b> Intersection (∩) selects elements shared by BOTH sets: {b, c}."
+    },
+    {
+        q: "🟢 2. [EASY] Which of the following represents an empty set?",
+        options: ["{0}", "∅", "{∅}", "{0, ∅}"],
+        correctIndex: 1,
+        exp: "<b>Explanation:</b> ∅ denotes a set with no elements. {0} is a set with one element."
+    },
+    {
+        q: "🟢 3. [EASY] How many subsets does a set containing 4 elements have?",
+        options: ["8", "16", "15", "4"],
+        correctIndex: 1,
+        exp: "<b>Explanation:</b> Total subsets = 2ⁿ = 2⁴ = 16."
+    },
+    {
+        q: "🟡 4. [MEDIUM] How many PROPER subsets does a set containing 4 elements have?",
+        options: ["16", "15", "8", "14"],
+        correctIndex: 1,
+        exp: "<b>Explanation:</b> Proper subsets = 2ⁿ - 1 = 16 - 1 = 15."
+    },
+    {
+        q: "🟡 5. [MEDIUM] Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9} and A = {2, 4, 6, 8}. What is A′ (A complement)?",
+        options: ["{1, 3, 5, 7, 9}", "{2, 4, 6, 8}", "{1, 2, 3, 4, 5, 6, 7, 8, 9}", "∅"],
+        correctIndex: 0,
+        exp: "<b>Explanation:</b> A′ contains all elements in Universal set U that are NOT in set A."
+    },
+    {
+        q: "🔴 6. [HARD] In a survey of 50 students, 30 study Math, 25 study Physics, and 10 study neither. How many study BOTH?",
+        options: ["10", "15", "20", "5"],
+        correctIndex: 1,
+        exp: "<b>Explanation:</b> Students studying subjects = 50 - 10 = 40. Formula: n(A ∪ B) = n(A) + n(B) - n(A ∩ B) ⇒ 40 = 30 + 25 - x ⇒ x = 15."
+    }
+];
