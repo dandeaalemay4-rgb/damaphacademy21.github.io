@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade 9 - DamaphAcademy21</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .unit-content {
+            display: none;
+            background: var(--card-bg);
+            border: 2px solid var(--card-title);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .clickable-card {
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .clickable-card:hover {
+            transform: translateY(-3px);
+            border-color: #0284c7;
+        }
+        .close-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+            font-weight: bold;
+        }
+        .summary-box {
+            background: var(--bg-color);
+            border-left: 4px solid #0284c7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,82 +63,165 @@
     </header>
 
     <section class="hero">
-        <h1>Grade 9 Curriculum & Quizzes</h1>
-        <p>Explore Units, Key Concepts, and Practice Interactive MCQs with Instant Feedback.</p>
+        <h1>Grade 9 Mathematics & Physics</h1>
+        <p>Click on any unit to open study summaries, key formulas, and interactive MCQs with instant sound and detailed explanations!</p>
     </section>
 
     <section class="main-content">
         
-        <h2>📐 Unit 1: Further on Sets (Interactive Quizzes)</h2>
-        <br>
-
-        <!-- EASY QUESTION -->
-        <div class="quiz-card">
-            <h4>🟢 1. [EASY] If set A = {1, 2, 3, 4} and set B = {3, 4, 5, 6}, what is A ∩ B?</h4>
-            <div class="options-grid">
-                <button class="option-btn" onclick="checkAnswer(this, false, 'The union combine all elements: {1, 2, 3, 4, 5, 6}.')">{1, 2, 3, 4, 5, 6}</button>
-                <button class="option-btn" onclick="checkAnswer(this, true, 'Correct! Intersection (∩) includes only elements that belong to BOTH sets: {3, 4}.')">{3, 4}</button>
-                <button class="option-btn" onclick="checkAnswer(this, false, 'Difference A \\ B is {1, 2}.')">{1, 2}</button>
-                <button class="option-btn" onclick="checkAnswer(this, false, 'Difference B \\ A is {5, 6}.')">{5, 6}</button>
+        <h2>📐 Mathematics Units (Click any unit to study)</h2>
+        <div class="grid-container">
+            <div class="card clickable-card" onclick="openUnit('math-unit1')">
+                <h3>Unit 1: Further on Sets</h3>
+                <p>Set operations, Venn diagrams, subset calculations, and practical applications.</p>
+                <span class="btn">Study & Practice Quiz ➔</span>
             </div>
-            <div class="feedback"></div>
+            <div class="card clickable-card" onclick="openUnit('math-unit2')">
+                <h3>Unit 2: The Number System</h3>
+                <p>Rational/irrational numbers, real number properties, and operations.</p>
+                <span class="btn">Study & Practice Quiz ➔</span>
+            </div>
+            <div class="card clickable-card" onclick="openUnit('math-unit3')">
+                <h3>Unit 3: Solving Equations</h3>
+                <p>Linear equations, algebraic manipulations, and word problems.</p>
+                <span class="btn">Study & Practice Quiz ➔</span>
+            </div>
+            <div class="card clickable-card" onclick="openUnit('math-unit4')">
+                <h3>Unit 4: Solving Inequalities</h3>
+                <p>Linear inequalities, interval notations, and graphing solutions.</p>
+                <span class="btn">Study & Practice Quiz ➔</span>
+            </div>
         </div>
 
-        <!-- MEDIUM QUESTION -->
-        <div class="quiz-card">
-            <h4>🟡 2. [MEDIUM] Given set A with n(A) = 5 elements. How many proper subsets does set A have?</h4>
-            <div class="options-grid">
-                <button class="option-btn" onclick="checkAnswer(this, false, 'Total subsets formula is 2ⁿ = 32, but proper subsets exclude the set itself.')">32</button>
-                <button class="option-btn" onclick="checkAnswer(this, true, 'Awesome! Total subsets = 2⁵ = 32. Proper subsets = 2ⁿ - 1 = 32 - 1 = 31.')">31</button>
-                <button class="option-btn" onclick="checkAnswer(this, false, '25 is 5 squared, not 2⁵.')">25</button>
-                <button class="option-btn" onclick="checkAnswer(this, false, '10 is 2 × 5, not power of 2.')">10</button>
+        <!-- MATH UNIT 1 INTERACTIVE CONTENT -->
+        <div id="math-unit1" class="unit-content">
+            <button class="close-btn" onclick="closeUnit('math-unit1')">✖ Close Unit</button>
+            <h2>📐 Math Unit 1: Further on Sets</h2>
+            
+            <div class="summary-box">
+                <h3>📝 Key Concept Summary & Shortcuts</h3>
+                <ul>
+                    <li><b>Union (A ∪ B):</b> Elements in A, B, or both.</li>
+                    <li><b>Intersection (A ∩ B):</b> Elements common to BOTH A and B.</li>
+                    <li><b>Difference (A \ B):</b> Elements in A but NOT in B.</li>
+                    <li><b>Total Subsets Formula:</b> 2<sup>n</sup> (where n is the number of elements).</li>
+                    <li><b>Proper Subsets Formula:</b> 2<sup>n</sup> - 1.</li>
+                    <li><b>Venn Diagram Formula:</b> n(A ∪ B) = n(A) + n(B) - n(A ∩ B).</li>
+                </ul>
             </div>
-            <div class="feedback"></div>
-        </div>
 
-        <!-- HARD QUESTION -->
-        <div class="quiz-card">
-            <h4>🔴 3. [HARD] In a class of 40 students, 25 play Football, 20 play Basketball, and 5 play neither game. How many students play BOTH Football and Basketball?</h4>
-            <div class="options-grid">
-                <button class="option-btn" onclick="checkAnswer(this, false, 'Total students participating in sports is 40 - 5 = 35.')">5</button>
-                <button class="option-btn" onclick="checkAnswer(this, true, 'Spot on! n(F ∪ B) = 40 - 5 = 35. Using n(F ∪ B) = n(F) + n(B) - n(F ∩ B) ⇒ 35 = 25 + 20 - x ⇒ x = 10.')">10</button>
-                <button class="option-btn" onclick="checkAnswer(this, false, 'Check the formula: 25 + 20 - 15 = 30, which leaves 10 playing neither.')">15</button>
-                <button class="option-btn" onclick="checkAnswer(this, false, '20 is the total basketball players.')">20</button>
-            </div>
-            <div class="feedback"></div>
-        </div>
+            <h3>🎯 Interactive Practice MCQs</h3>
+            <br>
 
-        <!-- HOT QUESTION -->
-        <div class="quiz-card">
-            <h4>🔥 4. [HOT - Higher Order Thinking] Let A and B be non-empty sets. If A ⊆ B, which of the following statements MUST be true?</h4>
-            <div class="options-grid">
-                <button class="option-btn" onclick="checkAnswer(this, false, 'A \\ B is actually empty (∅) because all elements of A are in B.')">A \ B = A</button>
-                <button class="option-btn" onclick="checkAnswer(this, false, 'A ∩ B is equal to A, not B.')">A ∩ B = B</button>
-                <button class="option-btn" onclick="checkAnswer(this, true, 'Brilliant analysis! Since A is completely inside B, combining A and B gives set B itself (A ∪ B = B).')">A ∪ B = B</button>
-                <button class="option-btn" onclick="checkAnswer(this, false, 'A′ ∩ B′ = (A ∪ B)′ = B′, not A′.')">A′ ∩ B′ = A′</button>
+            <!-- EASY -->
+            <div class="quiz-card">
+                <h4>🟢 1. [EASY] If set A = {1, 2, 3, 4} and set B = {3, 4, 5, 6}, find A ∩ B.</h4>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> {1, 2, 3, 4, 5, 6} is the Union (A ∪ B), which combines all unique elements.')">{1, 2, 3, 4, 5, 6}</button>
+                    <button class="option-btn" onclick="checkAnswer(this, true, '<b>Explanation:</b> Correct! The intersection (∩) means finding elements present in BOTH sets. 3 and 4 belong to both A and B.')">{3, 4}</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> {1, 2} is A \\ B (elements in A that are not in B).')">{1, 2}</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> {5, 6} is B \\ A (elements in B that are not in A).')">{5, 6}</button>
+                </div>
+                <div class="feedback"></div>
             </div>
-            <div class="feedback"></div>
+
+            <!-- MEDIUM -->
+            <div class="quiz-card">
+                <h4>🟡 2. [MEDIUM] Set A contains 5 elements. How many PROPER subsets does set A have?</h4>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> 32 is the total number of subsets (2⁵ = 32). Proper subsets exclude the set itself.')">32</button>
+                    <button class="option-btn" onclick="checkAnswer(this, true, '<b>Explanation:</b> Great job! Total subsets = 2ⁿ = 2⁵ = 32. Proper subsets formula is 2ⁿ - 1 = 32 - 1 = 31.')">31</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> 25 is 5², which is incorrect. Use powers of 2.')">25</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> 10 is 2 × 5, not 2⁵.')">10</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- HARD -->
+            <div class="quiz-card">
+                <h4>🔴 3. [HARD] In a class of 40 students, 25 play Football, 20 play Basketball, and 5 play neither. How many play BOTH games?</h4>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> 5 is the number of students playing neither sport.')">5</button>
+                    <button class="option-btn" onclick="checkAnswer(this, true, '<b>Explanation:</b> Spot on! Students in sports = 40 - 5 = 35. Formula: n(F ∪ B) = n(F) + n(B) - n(F ∩ B) ⇒ 35 = 25 + 20 - x ⇒ 35 = 45 - x ⇒ x = 10.')">10</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> Incorrect. If x=15, then 25 + 20 - 15 = 30 students in sports, which leaves 10 playing neither.')">15</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> 20 is the total basketball players.')">20</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- HOT -->
+            <div class="quiz-card">
+                <h4>🔥 4. [HOT - Higher Order Thinking] If set A ⊆ B (A is a subset of B), which statement MUST be true?</h4>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> False. Since all elements of A are inside B, A \\ B is empty set (∅).')">A \ B = A</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> False. A ∩ B equals A, not B, because A is smaller and contained in B.')">A ∩ B = B</button>
+                    <button class="option-btn" onclick="checkAnswer(this, true, '<b>Explanation:</b> Brilliant analysis! Since set A is entirely contained inside set B, combining them (A ∪ B) simply gives set B itself.')">A ∪ B = B</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> False. By De Morgan\'s Law, (A ∪ B)′ = B′, not A′.')">A′ ∩ B′ = A′</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
         </div>
 
         <br><br>
 
-        <h2>📚 Grade 9 Overview</h2>
+        <h2>🔭 Physics Units (Click any unit to study)</h2>
         <div class="grid-container">
-            <div class="card">
-                <h3>Unit 1: Further on Sets</h3>
-                <p>Set operations, Venn diagrams, subset calculations, and word problems.</p>
+            <div class="card clickable-card" onclick="openUnit('phys-unit1')">
+                <h3>Unit 1: Physics and Human Society</h3>
+                <p>Branches of physics, societal impact, and famous physical discoveries.</p>
+                <span class="btn">Study & Practice Quiz ➔</span>
             </div>
-            <div class="card">
-                <h3>Unit 2: The Number System</h3>
-                <p>Rational and irrational numbers, real number properties, and operations.</p>
+            <div class="card clickable-card" onclick="openUnit('phys-unit2')">
+                <h3>Unit 2: Physical Quantities</h3>
+                <p>Base & derived units, measurement precision, errors, and unit conversions.</p>
+                <span class="btn">Study & Practice Quiz ➔</span>
             </div>
-            <div class="card">
-                <h3>Unit 3: Linear Equations</h3>
-                <p>Solving linear equations, applications, and algebraic systems.</p>
+            <div class="card clickable-card" onclick="openUnit('phys-unit3')">
+                <h3>Unit 3: Motion in a Straight Line</h3>
+                <p>Distance, displacement, velocity, acceleration, and motion graphs.</p>
+                <span class="btn">Study & Practice Quiz ➔</span>
             </div>
-            <div class="card">
-                <h3>Unit 4: Linear Inequalities</h3>
-                <p>Properties of inequalities, interval notation, and graphical solutions.</p>
+        </div>
+
+        <!-- PHYSICS UNIT 1 INTERACTIVE CONTENT -->
+        <div id="phys-unit1" class="unit-content">
+            <button class="close-btn" onclick="closeUnit('phys-unit1')">✖ Close Unit</button>
+            <h2>🔭 Physics Unit 1: Physics and Human Society</h2>
+            
+            <div class="summary-box">
+                <h3>📝 Key Concept Summary</h3>
+                <ul>
+                    <li><b>Physics Definition:</b> The study of matter, energy, and their interactions.</li>
+                    <li><b>Main Branches:</b> Mechanics, Thermodynamics, Optics, Electromagnetism, Quantum Physics.</li>
+                    <li><b>Interdisciplinary Fields:</b> Astrophysics, Biophysics, Geophysics.</li>
+                </ul>
+            </div>
+
+            <h3>🎯 Interactive Practice MCQs</h3>
+            <br>
+
+            <!-- EASY -->
+            <div class="quiz-card">
+                <h4>🟢 1. [EASY] Which branch of physics deals with heat, temperature, and work transformation?</h4>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> Optics studies light and its properties.')">Optics</button>
+                    <button class="option-btn" onclick="checkAnswer(this, true, '<b>Explanation:</b> Correct! Thermodynamics comes from Greek words meaning heat and power/motion.')">Thermodynamics</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> Mechanics studies motion and forces.')">Mechanics</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> Acoustics studies sound waves.')">Acoustics</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- MEDIUM -->
+            <div class="quiz-card">
+                <h4>🟡 2. [MEDIUM] Which physical discovery contributed most directly to the invention of electric generators and transformers?</h4>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> Universal gravitation explains planetary motion and weight.')">Newton\'s Law of Gravitation</button>
+                    <button class="option-btn" onclick="checkAnswer(this, true, '<b>Explanation:</b> Excellent! Faraday\'s Law of Electromagnetic Induction is the fundamental principle behind generators and power plants.')">Electromagnetic Induction</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> Photoelectric effect laid foundations for quantum theory and solar cells.')">Photoelectric Effect</button>
+                    <button class="option-btn" onclick="checkAnswer(this, false, '<b>Explanation:</b> Thermodynamics deals with engines and heat engines.')">Laws of Thermodynamics</button>
+                </div>
+                <div class="feedback"></div>
             </div>
         </div>
 
@@ -109,5 +233,24 @@
 
     <script src="script.js"></script>
     <script src="quiz-script.js"></script>
+    <script>
+        function openUnit(unitId) {
+            // Hide all unit contents first
+            document.querySelectorAll('.unit-content').forEach(el => el.style.display = 'none');
+            // Show selected unit
+            const targetUnit = document.getElementById(unitId);
+            if (targetUnit) {
+                targetUnit.style.display = 'block';
+                targetUnit.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function closeUnit(unitId) {
+            const targetUnit = document.getElementById(unitId);
+            if (targetUnit) {
+                targetUnit.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
